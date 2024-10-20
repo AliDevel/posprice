@@ -11,6 +11,9 @@
  "owner": "Administrator",
  "page_name": "posprice",
  "roles": [
+    {
+        "role": "Price User"
+       },    
   {
    "role": "Sales User"
   },
