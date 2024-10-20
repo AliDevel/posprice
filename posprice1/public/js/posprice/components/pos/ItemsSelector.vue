@@ -76,8 +76,12 @@
         <v-list-item v-if="filtred_items.length > 0">
           <v-list-item-content>
             <!-- Labels with Item Data -->
-            <v-list-item-subtitle class="headline font-weight-bold">
-              <strong>{{ frappe._('Item Name') }}: </strong>  {{ filtred_items[0].item_code }}  {{ filtred_items[0].item_name }}
+            <v-list-item-subtitle class="headline font-weight-bold"
+            style="background-color: yellow; padding: 10px; border-radius: 8px;">
+              
+              <span style="font-size: 2rem; font-weight: 900;">
+              <strong>{{ frappe._('Item') }}: </strong>  {{ filtred_items[0].item_code }}  {{ filtred_items[0].item_name }}
+              </span>
             </v-list-item-subtitle>
         
             <!-- Loop through prices and display them -->
@@ -86,11 +90,12 @@
               :key="price.uom"
               class="pa-3 my-2"
               outlined
+              style="background-color: lightgreen; border-radius: 8px;"
             >
               <v-list-item-subtitle class="headline">
                 <strong>{{ frappe._('Price:') }} </strong> 
-                <span style="font-size: 4.5rem; font-weight: 900;">
-                  {{ formatCurrency(price.price_list_rate) }}
+                <span style="font-size: 6rem; font-weight: 900;">
+                  {{ price.price_list_rate }} TMT
                 </span> 
                 {{ price.uom }} <br>
               </v-list-item-subtitle>

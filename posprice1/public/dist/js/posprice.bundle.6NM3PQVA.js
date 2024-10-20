@@ -5573,7 +5573,7 @@
           staticClass: "mr-2",
           attrs: {
             src: "/assets/posawesome/js/posapp/components/pos/pos.png",
-            alt: "POS Awesome",
+            alt: "POS Price",
             "max-width": "32",
             color: "primary"
           }
@@ -5591,109 +5591,7 @@
           _c("span")
         ]),
         _vm._v(" "),
-        _c("v-spacer"),
-        _vm._v(" "),
-        _c("v-btn", {
-          staticStyle: { cursor: "unset" },
-          attrs: { text: "", color: "primary" }
-        }, [
-          _c("span", { attrs: { right: "" } }, [
-            _vm._v(_vm._s(_vm.pos_profile.name))
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "text-center" }, [
-          _c("v-menu", {
-            attrs: { "offset-y": "" },
-            scopedSlots: _vm._u([
-              {
-                key: "activator",
-                fn: function(ref) {
-                  var on = ref.on;
-                  var attrs = ref.attrs;
-                  return [
-                    _c("v-btn", _vm._g(_vm._b({
-                      attrs: {
-                        color: "primary",
-                        dark: "",
-                        text: ""
-                      }
-                    }, "v-btn", attrs, false), on), [_vm._v("Menu")])
-                  ];
-                }
-              }
-            ])
-          }, [
-            _vm._v(" "),
-            _c("v-card", {
-              staticClass: "mx-auto",
-              attrs: { "max-width": "300", tile: "" }
-            }, [
-              _c("v-list", { attrs: { dense: "" } }, [
-                _c("v-list-item-group", {
-                  attrs: { color: "primary" },
-                  model: {
-                    value: _vm.menu_item,
-                    callback: function($$v) {
-                      _vm.menu_item = $$v;
-                    },
-                    expression: "menu_item"
-                  }
-                }, [
-                  !_vm.pos_profile.posa_hide_closing_shift ? _c("v-list-item", { on: { click: _vm.close_shift_dialog } }, [
-                    _c("v-list-item-icon", [
-                      _c("v-icon", [
-                        _vm._v("mdi-content-save-move-outline")
-                      ])
-                    ], 1),
-                    _vm._v(" "),
-                    _c("v-list-item-content", [
-                      _c("v-list-item-title", [
-                        _vm._v(_vm._s(_vm.__("Close Shift")))
-                      ])
-                    ], 1)
-                  ], 1) : _vm._e(),
-                  _vm._v(" "),
-                  _vm.pos_profile.posa_allow_print_last_invoice && this.last_invoice ? _c("v-list-item", { on: { click: _vm.print_last_invoice } }, [
-                    _c("v-list-item-icon", [_c("v-icon", [_vm._v("mdi-printer")])], 1),
-                    _vm._v(" "),
-                    _c("v-list-item-content", [
-                      _c("v-list-item-title", [
-                        _vm._v(_vm._s(_vm.__("Print Last Invoice")))
-                      ])
-                    ], 1)
-                  ], 1) : _vm._e(),
-                  _vm._v(" "),
-                  _c("v-divider", { staticClass: "my-0" }),
-                  _vm._v(" "),
-                  _c("v-list-item", { on: { click: _vm.logOut } }, [
-                    _c("v-list-item-icon", [_c("v-icon", [_vm._v("mdi-logout")])], 1),
-                    _vm._v(" "),
-                    _c("v-list-item-content", [
-                      _c("v-list-item-title", [
-                        _vm._v(_vm._s(_vm.__("Logout")))
-                      ])
-                    ], 1)
-                  ], 1),
-                  _vm._v(" "),
-                  _c("v-list-item", { on: { click: _vm.go_about } }, [
-                    _c("v-list-item-icon", [
-                      _c("v-icon", [
-                        _vm._v("mdi-information-outline")
-                      ])
-                    ], 1),
-                    _vm._v(" "),
-                    _c("v-list-item-content", [
-                      _c("v-list-item-title", [
-                        _vm._v(_vm._s(_vm.__("About")))
-                      ])
-                    ], 1)
-                  ], 1)
-                ], 1)
-              ], 1)
-            ], 1)
-          ], 1)
-        ], 1)
+        _c("v-spacer")
       ], 1),
       _vm._v(" "),
       _c("v-navigation-drawer", {
@@ -5802,7 +5700,7 @@
   var __vue_inject_styles__ = function(inject) {
     if (!inject)
       return;
-    inject("data-v-487be8d0_0", { source: "\n.margen-top[data-v-487be8d0] {\n  margin-top: 0px;\n}\n", map: { "version": 3, "sources": ["../posprice1/posprice1/public/js/posprice/components/Navbar.vue"], "names": [], "mappings": ";AAmQA;EACA,eAAA;AACA", "file": "Navbar.vue", "sourcesContent": [`<template>
+    inject("data-v-68e1a8ed_0", { source: "\n.margen-top[data-v-68e1a8ed] {\n  margin-top: 0px;\n}\n", map: { "version": 3, "sources": ["../posprice1/posprice1/public/js/posprice/components/Navbar.vue"], "names": [], "mappings": ";AAoMA;EACA,eAAA;AACA", "file": "Navbar.vue", "sourcesContent": [`<template>
   <nav>
     <v-app-bar app height="40" class="elevation-2">
       <v-app-bar-nav-icon
@@ -5811,7 +5709,7 @@
       ></v-app-bar-nav-icon>
       <v-img
         src="/assets/posawesome/js/posapp/components/pos/pos.png"
-        alt="POS Awesome"
+        alt="POS Price"
         max-width="32"
         class="mr-2"
         color="primary"
@@ -5826,70 +5724,7 @@
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <v-btn style="cursor: unset" text color="primary">
-        <span right>{{ pos_profile.name }}</span>
-      </v-btn>
-      <div class="text-center">
-        <v-menu offset-y>
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn color="primary" dark text v-bind="attrs" v-on="on"
-              >Menu</v-btn
-            >
-          </template>
-          <v-card class="mx-auto" max-width="300" tile>
-            <v-list dense>
-              <v-list-item-group v-model="menu_item" color="primary">
-                <v-list-item
-                  @click="close_shift_dialog"
-                  v-if="!pos_profile.posa_hide_closing_shift"
-                >
-                  <v-list-item-icon>
-                    <v-icon>mdi-content-save-move-outline</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-content>
-                    <v-list-item-title>{{
-                      __('Close Shift')
-                    }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item
-                  @click="print_last_invoice"
-                  v-if="
-                    pos_profile.posa_allow_print_last_invoice &&
-                    this.last_invoice
-                  "
-                >
-                  <v-list-item-icon>
-                    <v-icon>mdi-printer</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-content>
-                    <v-list-item-title>{{
-                      __('Print Last Invoice')
-                    }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-divider class="my-0"></v-divider>
-                <v-list-item @click="logOut">
-                  <v-list-item-icon>
-                    <v-icon>mdi-logout</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-content>
-                    <v-list-item-title>{{ __('Logout') }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item @click="go_about">
-                  <v-list-item-icon>
-                    <v-icon>mdi-information-outline</v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-content>
-                    <v-list-item-title>{{ __('About') }}</v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list-item-group>
-            </v-list>
-          </v-card>
-        </v-menu>
-      </div>
+      
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
@@ -6067,7 +5902,7 @@ export default {
 </style>
 `] }, media: void 0 });
   };
-  var __vue_scope_id__ = "data-v-487be8d0";
+  var __vue_scope_id__ = "data-v-68e1a8ed";
   var __vue_module_identifier__ = void 0;
   var __vue_is_functional_template__ = false;
   function __vue_normalize__(template, style, script, scope, functional, moduleIdentifier, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
@@ -6969,17 +6804,35 @@ export default {
         _c("v-card", { staticClass: "mx-auto pa-3" }, [
           _vm.filtred_items.length > 0 ? _c("v-list-item", [
             _c("v-list-item-content", [
-              _c("v-list-item-subtitle", { staticClass: "headline font-weight-bold" }, [
-                _c("strong", [
-                  _vm._v(_vm._s(_vm.frappe._("Item Name")) + ": ")
-                ]),
-                _vm._v("  " + _vm._s(_vm.filtred_items[0].item_code) + "  " + _vm._s(_vm.filtred_items[0].item_name) + "\n          ")
+              _c("v-list-item-subtitle", {
+                staticClass: "headline font-weight-bold",
+                staticStyle: {
+                  "background-color": "yellow",
+                  padding: "10px",
+                  "border-radius": "8px"
+                }
+              }, [
+                _c("span", {
+                  staticStyle: {
+                    "font-size": "2rem",
+                    "font-weight": "900"
+                  }
+                }, [
+                  _c("strong", [
+                    _vm._v(_vm._s(_vm.frappe._("Item")) + ": ")
+                  ]),
+                  _vm._v("  " + _vm._s(_vm.filtred_items[0].item_code) + "  " + _vm._s(_vm.filtred_items[0].item_name) + "\n            ")
+                ])
               ]),
               _vm._v(" "),
               _vm._l(_vm.getItemPrices(_vm.filtred_items[0].item_code), function(price) {
                 return _c("v-card", {
                   key: price.uom,
                   staticClass: "pa-3 my-2",
+                  staticStyle: {
+                    "background-color": "lightgreen",
+                    "border-radius": "8px"
+                  },
                   attrs: { outlined: "" }
                 }, [
                   _c("v-list-item-subtitle", { staticClass: "headline" }, [
@@ -6989,11 +6842,11 @@ export default {
                     _vm._v(" "),
                     _c("span", {
                       staticStyle: {
-                        "font-size": "4.5rem",
+                        "font-size": "6rem",
                         "font-weight": "900"
                       }
                     }, [
-                      _vm._v("\n                " + _vm._s(_vm.formatCurrency(price.price_list_rate)) + "\n              ")
+                      _vm._v("\n                " + _vm._s(price.price_list_rate) + " TMT\n              ")
                     ]),
                     _vm._v(" \n              " + _vm._s(price.uom) + " "),
                     _c("br")
@@ -7017,7 +6870,7 @@ export default {
   var __vue_inject_styles__3 = function(inject) {
     if (!inject)
       return;
-    inject("data-v-9e16b56e_0", { source: "\n.fill-height[data-v-9e16b56e] {\n  height: calc(75vh); /* Allocate 75% of the height for item display */\n}\n.display-1[data-v-9e16b56e] {\n  font-size: 4rem;\n}\n.headline[data-v-9e16b56e] {\n  font-size: 2rem;\n  margin-bottom: 1rem;\n}\n", map: { "version": 3, "sources": ["../posprice1/posprice1/public/js/posprice/components/pos/ItemsSelector.vue"], "names": [], "mappings": ";AAmjBA;EACA,kBAAA,EAAA,gDAAA;AACA;AACA;EACA,eAAA;AACA;AACA;EACA,eAAA;EACA,mBAAA;AACA", "file": "ItemsSelector.vue", "sourcesContent": [`<template>
+    inject("data-v-36146c98_0", { source: "\n.fill-height[data-v-36146c98] {\n  height: calc(75vh); /* Allocate 75% of the height for item display */\n}\n.display-1[data-v-36146c98] {\n  font-size: 4rem;\n}\n.headline[data-v-36146c98] {\n  font-size: 2rem;\n  margin-bottom: 1rem;\n}\n", map: { "version": 3, "sources": ["../posprice1/posprice1/public/js/posprice/components/pos/ItemsSelector.vue"], "names": [], "mappings": ";AAwjBA;EACA,kBAAA,EAAA,gDAAA;AACA;AACA;EACA,eAAA;AACA;AACA;EACA,eAAA;EACA,mBAAA;AACA", "file": "ItemsSelector.vue", "sourcesContent": [`<template>
   <div>
     <!-- Search Section -->
     <v-card
@@ -7095,8 +6948,12 @@ export default {
         <v-list-item v-if="filtred_items.length > 0">
           <v-list-item-content>
             <!-- Labels with Item Data -->
-            <v-list-item-subtitle class="headline font-weight-bold">
-              <strong>{{ frappe._('Item Name') }}: </strong>  {{ filtred_items[0].item_code }}  {{ filtred_items[0].item_name }}
+            <v-list-item-subtitle class="headline font-weight-bold"
+            style="background-color: yellow; padding: 10px; border-radius: 8px;">
+              
+              <span style="font-size: 2rem; font-weight: 900;">
+              <strong>{{ frappe._('Item') }}: </strong>  {{ filtred_items[0].item_code }}  {{ filtred_items[0].item_name }}
+              </span>
             </v-list-item-subtitle>
         
             <!-- Loop through prices and display them -->
@@ -7105,11 +6962,12 @@ export default {
               :key="price.uom"
               class="pa-3 my-2"
               outlined
+              style="background-color: lightgreen; border-radius: 8px;"
             >
               <v-list-item-subtitle class="headline">
                 <strong>{{ frappe._('Price:') }} </strong> 
-                <span style="font-size: 4.5rem; font-weight: 900;">
-                  {{ formatCurrency(price.price_list_rate) }}
+                <span style="font-size: 6rem; font-weight: 900;">
+                  {{ price.price_list_rate }} TMT
                 </span> 
                 {{ price.uom }} <br>
               </v-list-item-subtitle>
@@ -7592,7 +7450,7 @@ if (!name) {
 }
 </style>`] }, media: void 0 });
   };
-  var __vue_scope_id__3 = "data-v-9e16b56e";
+  var __vue_scope_id__3 = "data-v-36146c98";
   var __vue_module_identifier__3 = void 0;
   var __vue_is_functional_template__3 = false;
   function __vue_normalize__3(template, style, script, scope, functional, moduleIdentifier, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
@@ -11770,4 +11628,4 @@ export default {
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
-//# sourceMappingURL=posprice.bundle.4EVECXTR.js.map
+//# sourceMappingURL=posprice.bundle.6NM3PQVA.js.map
