@@ -4,7 +4,10 @@ app_publisher = "Alimerdan "
 app_description = "Price"
 app_email = "alimerdanrahimov@gmail.com"
 app_license = "MIT"
-
+app_include_js = [
+    "/assets/posawesome/node_modules/vuetify/dist/vuetify.js",
+    "posprice.bundle.js",
+]
 # Includes in <head>
 # ------------------
 
