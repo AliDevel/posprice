@@ -51,8 +51,6 @@
             hide-details
             v-model.number="qty"
             type="number"
-            @keydown.enter="enter_event"
-            @keydown.esc="esc_event"
             ref="debounce_qty"
           ></v-text-field>
         </v-col>
@@ -395,9 +393,9 @@ if (!name) {
         frappe.utils.play_sound('error');
       } else {
        
-        this.enter_event();
-        this.debounce_search = null;
-        this.search = null;
+        //this.enter_event();
+        //this.debounce_search = null;
+        //this.search = null;
       }} else {
     if (customerFound) {
         evntBus.$emit('set_customer', name);

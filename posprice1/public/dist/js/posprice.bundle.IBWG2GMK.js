@@ -6543,9 +6543,6 @@ export default {
             });
             frappe.utils.play_sound("error");
           } else {
-            this.enter_event();
-            this.debounce_search = null;
-            this.search = null;
           }
         } else {
           if (customerFound) {
@@ -6750,25 +6747,6 @@ export default {
                 "hide-details": "",
                 type: "number"
               },
-              on: {
-                keydown: [
-                  function($event) {
-                    if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) {
-                      return null;
-                    }
-                    return _vm.enter_event.apply(null, arguments);
-                  },
-                  function($event) {
-                    if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "esc", 27, $event.key, [
-                      "Esc",
-                      "Escape"
-                    ])) {
-                      return null;
-                    }
-                    return _vm.esc_event.apply(null, arguments);
-                  }
-                ]
-              },
               model: {
                 value: _vm.qty,
                 callback: function($$v) {
@@ -6870,7 +6848,7 @@ export default {
   var __vue_inject_styles__3 = function(inject) {
     if (!inject)
       return;
-    inject("data-v-36146c98_0", { source: "\n.fill-height[data-v-36146c98] {\n  height: calc(75vh); /* Allocate 75% of the height for item display */\n}\n.display-1[data-v-36146c98] {\n  font-size: 4rem;\n}\n.headline[data-v-36146c98] {\n  font-size: 2rem;\n  margin-bottom: 1rem;\n}\n", map: { "version": 3, "sources": ["../posprice1/posprice1/public/js/posprice/components/pos/ItemsSelector.vue"], "names": [], "mappings": ";AAwjBA;EACA,kBAAA,EAAA,gDAAA;AACA;AACA;EACA,eAAA;AACA;AACA;EACA,eAAA;EACA,mBAAA;AACA", "file": "ItemsSelector.vue", "sourcesContent": [`<template>
+    inject("data-v-3dc550b8_0", { source: "\n.fill-height[data-v-3dc550b8] {\n  height: calc(75vh); /* Allocate 75% of the height for item display */\n}\n.display-1[data-v-3dc550b8] {\n  font-size: 4rem;\n}\n.headline[data-v-3dc550b8] {\n  font-size: 2rem;\n  margin-bottom: 1rem;\n}\n", map: { "version": 3, "sources": ["../posprice1/posprice1/public/js/posprice/components/pos/ItemsSelector.vue"], "names": [], "mappings": ";AAsjBA;EACA,kBAAA,EAAA,gDAAA;AACA;AACA;EACA,eAAA;AACA;AACA;EACA,eAAA;EACA,mBAAA;AACA", "file": "ItemsSelector.vue", "sourcesContent": [`<template>
   <div>
     <!-- Search Section -->
     <v-card
@@ -6923,8 +6901,6 @@ export default {
             hide-details
             v-model.number="qty"
             type="number"
-            @keydown.enter="enter_event"
-            @keydown.esc="esc_event"
             ref="debounce_qty"
           ></v-text-field>
         </v-col>
@@ -7267,9 +7243,9 @@ if (!name) {
         frappe.utils.play_sound('error');
       } else {
        
-        this.enter_event();
-        this.debounce_search = null;
-        this.search = null;
+        //this.enter_event();
+        //this.debounce_search = null;
+        //this.search = null;
       }} else {
     if (customerFound) {
         evntBus.$emit('set_customer', name);
@@ -7450,7 +7426,7 @@ if (!name) {
 }
 </style>`] }, media: void 0 });
   };
-  var __vue_scope_id__3 = "data-v-36146c98";
+  var __vue_scope_id__3 = "data-v-3dc550b8";
   var __vue_module_identifier__3 = void 0;
   var __vue_is_functional_template__3 = false;
   function __vue_normalize__3(template, style, script, scope, functional, moduleIdentifier, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
@@ -11628,4 +11604,4 @@ export default {
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
-//# sourceMappingURL=posprice.bundle.6NM3PQVA.js.map
+//# sourceMappingURL=posprice.bundle.IBWG2GMK.js.map
