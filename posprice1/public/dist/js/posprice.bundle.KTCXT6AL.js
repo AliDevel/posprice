@@ -6676,7 +6676,7 @@ export default {
     return _c("div", [
       _c("v-card", {
         staticClass: "selection mx-auto grey lighten-5 mt-3",
-        staticStyle: { "max-height": "20vh", height: "20vh" },
+        staticStyle: { "max-height": "20vh", height: "10vh" },
         attrs: { elevation: "2", shaped: "" }
       }, [
         _c("v-progress-linear", {
@@ -6779,7 +6779,14 @@ export default {
       ], 1),
       _vm._v(" "),
       _c("v-container", { staticClass: "fill-height d-flex align-center justify-center" }, [
-        _c("v-card", { staticClass: "mx-auto pa-3" }, [
+        _c("v-card", {
+          staticClass: "mx-auto pa-3",
+          staticStyle: {
+            width: "calc(100vw)",
+            "max-width": "calc(100vw)",
+            height: "calc(100vh)"
+          }
+        }, [
           _vm.filtred_items.length > 0 ? _c("v-list-item", [
             _c("v-list-item-content", [
               _c("v-list-item-subtitle", {
@@ -6787,19 +6794,21 @@ export default {
                 staticStyle: {
                   "background-color": "yellow",
                   padding: "10px",
-                  "border-radius": "8px"
+                  "border-radius": "8px",
+                  "font-size": "calc(5vw)",
+                  "text-align": "center",
+                  width: "100%",
+                  "white-space": "normal",
+                  "word-break": "break-word"
                 }
               }, [
                 _c("span", {
                   staticStyle: {
-                    "font-size": "2rem",
+                    "font-size": "calc(5vw)",
                     "font-weight": "900"
                   }
                 }, [
-                  _c("strong", [
-                    _vm._v(_vm._s(_vm.frappe._("Item")) + ": ")
-                  ]),
-                  _vm._v("  " + _vm._s(_vm.filtred_items[0].item_code) + "  " + _vm._s(_vm.filtred_items[0].item_name) + "\n            ")
+                  _vm._v("\n        " + _vm._s(_vm.filtred_items[0].item_code) + " " + _vm._s(_vm.filtred_items[0].item_name) + "\n      ")
                 ])
               ]),
               _vm._v(" "),
@@ -6809,24 +6818,21 @@ export default {
                   staticClass: "pa-3 my-2",
                   staticStyle: {
                     "background-color": "lightgreen",
-                    "border-radius": "8px"
+                    "border-radius": "8px",
+                    "font-size": "calc(5vw)"
                   },
                   attrs: { outlined: "" }
                 }, [
                   _c("v-list-item-subtitle", { staticClass: "headline" }, [
-                    _c("strong", [
-                      _vm._v(_vm._s(_vm.frappe._("Price:")) + " ")
-                    ]),
-                    _vm._v(" "),
                     _c("span", {
                       staticStyle: {
-                        "font-size": "6rem",
+                        "font-size": "calc(10vw)",
                         "font-weight": "900"
                       }
                     }, [
-                      _vm._v("\n                " + _vm._s(price.price_list_rate) + " TMT\n              ")
+                      _vm._v("\n                " + _vm._s(price.uom) + ": " + _vm._s(parseFloat(price.price_list_rate).toFixed(2)) + " TMT\n              ")
                     ]),
-                    _vm._v(" \n              " + _vm._s(price.uom) + " "),
+                    _vm._v(" "),
                     _c("br")
                   ])
                 ], 1);
@@ -6848,14 +6854,14 @@ export default {
   var __vue_inject_styles__3 = function(inject) {
     if (!inject)
       return;
-    inject("data-v-3dc550b8_0", { source: "\n.fill-height[data-v-3dc550b8] {\n  height: calc(75vh); /* Allocate 75% of the height for item display */\n}\n.display-1[data-v-3dc550b8] {\n  font-size: 4rem;\n}\n.headline[data-v-3dc550b8] {\n  font-size: 2rem;\n  margin-bottom: 1rem;\n}\n", map: { "version": 3, "sources": ["../posprice1/posprice1/public/js/posprice/components/pos/ItemsSelector.vue"], "names": [], "mappings": ";AAsjBA;EACA,kBAAA,EAAA,gDAAA;AACA;AACA;EACA,eAAA;AACA;AACA;EACA,eAAA;EACA,mBAAA;AACA", "file": "ItemsSelector.vue", "sourcesContent": [`<template>
+    inject("data-v-63f33c3a_0", { source: "\n.fill-height[data-v-63f33c3a] {\n  height: calc(75vh); /* Allocate 75% of the height for item display */\n}\n.display-1[data-v-63f33c3a] {\n  font-size: 4rem;\n}\n.headline[data-v-63f33c3a] {\n  font-size: 2rem;\n  margin-bottom: 1rem;\n}\n", map: { "version": 3, "sources": ["../posprice1/posprice1/public/js/posprice/components/pos/ItemsSelector.vue"], "names": [], "mappings": ";AAsjBA;EACA,kBAAA,EAAA,gDAAA;AACA;AACA;EACA,eAAA;AACA;AACA;EACA,eAAA;EACA,mBAAA;AACA", "file": "ItemsSelector.vue", "sourcesContent": [`<template>
   <div>
     <!-- Search Section -->
     <v-card
       class="selection mx-auto grey lighten-5 mt-3"
       elevation="2"
       shaped
-      style="max-height: 20vh; height: 20vh"
+      style="max-height: 20vh; height: 10vh"
     >
       <v-progress-linear
         :active="loading"
@@ -6919,18 +6925,19 @@ export default {
 
     <!-- Item Display Section -->
     <v-container class="fill-height d-flex align-center justify-center">
-      <v-card class="mx-auto pa-3" >
+      <v-card class="mx-auto pa-3" style="width: calc(100vw); ; max-width: calc(100vw); height: calc(100vh); ;">
         <!-- Check if filtered_items has at least one item -->
         <v-list-item v-if="filtred_items.length > 0">
           <v-list-item-content>
             <!-- Labels with Item Data -->
-            <v-list-item-subtitle class="headline font-weight-bold"
-            style="background-color: yellow; padding: 10px; border-radius: 8px;">
-              
-              <span style="font-size: 2rem; font-weight: 900;">
-              <strong>{{ frappe._('Item') }}: </strong>  {{ filtred_items[0].item_code }}  {{ filtred_items[0].item_name }}
-              </span>
-            </v-list-item-subtitle>
+            <v-list-item-subtitle
+        class="headline font-weight-bold"
+        style="background-color: yellow; padding: 10px; border-radius: 8px; font-size: calc(5vw); text-align: center; width: 100%; white-space: normal; word-break: break-word;"
+      >
+        <span style="font-size: calc(5vw); font-weight: 900;">
+          {{ filtred_items[0].item_code }} {{ filtred_items[0].item_name }}
+        </span>
+      </v-list-item-subtitle>
         
             <!-- Loop through prices and display them -->
             <v-card
@@ -6938,14 +6945,13 @@ export default {
               :key="price.uom"
               class="pa-3 my-2"
               outlined
-              style="background-color: lightgreen; border-radius: 8px;"
+              style="background-color: lightgreen; border-radius: 8px; font-size: calc(5vw);"
             >
               <v-list-item-subtitle class="headline">
-                <strong>{{ frappe._('Price:') }} </strong> 
-                <span style="font-size: 6rem; font-weight: 900;">
-                  {{ price.price_list_rate }} TMT
-                </span> 
-                {{ price.uom }} <br>
+                <span style="font-size:  calc(10vw); font-weight: 900;">
+                  {{ price.uom }}: {{ parseFloat(price.price_list_rate).toFixed(2)  }} TMT
+                </span>
+                <br>
               </v-list-item-subtitle>
             </v-card>
           </v-list-item-content>
@@ -7426,7 +7432,7 @@ if (!name) {
 }
 </style>`] }, media: void 0 });
   };
-  var __vue_scope_id__3 = "data-v-3dc550b8";
+  var __vue_scope_id__3 = "data-v-63f33c3a";
   var __vue_module_identifier__3 = void 0;
   var __vue_is_functional_template__3 = false;
   function __vue_normalize__3(template, style, script, scope, functional, moduleIdentifier, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
@@ -11604,4 +11610,4 @@ export default {
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
-//# sourceMappingURL=posprice.bundle.IBWG2GMK.js.map
+//# sourceMappingURL=posprice.bundle.KTCXT6AL.js.map
